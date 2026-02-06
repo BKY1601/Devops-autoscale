@@ -19,7 +19,7 @@ The infrastructure is designed to be self-healing and scalable, capable of handl
 
 ### 1. Final Application Output
 The Dockerized Flask application running successfully on AWS.
-![App Output](images/Flask App final output.png)
+![App Output](images/Flask_App_final_output.png)
 
 ### 2. AWS Auto Scaling in Action
 Three instances running automatically to handle the load (VM Autoscale).
@@ -56,6 +56,7 @@ Isolated Virtual Private Cloud (VPC) for secure networking.
 ├── Dockerfile           # Docker image configuration
 └── README.md            # Project Documentation
 
+````
 ---
 
 ### 🛠️ Tech Stack
