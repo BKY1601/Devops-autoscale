@@ -59,6 +59,7 @@ Isolated Virtual Private Cloud (VPC) for secure networking.
 
 ```bash
 ├── .github/workflows/main.yml   # CI/CD Pipeline (YAML)
+├── images/                      # Project Screenshots
 ├── app.py                       # Main Flask Application
 ├── Dockerfile                   # Docker image configuration
 └── README.md                    # Project Documentation
