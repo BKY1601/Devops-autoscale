@@ -19,30 +19,37 @@ The infrastructure is designed to be self-healing and scalable, capable of handl
 
 ### 1. Final Application Output
 The Dockerized Flask application running successfully on AWS.
-![App Output](images/Flask_App_final_output.png)
+
+![App Output](images/Flask-App-final-output.png)
 
 ### 2. AWS Auto Scaling in Action
 Three instances running automatically to handle the load (VM Autoscale).
+
 ![Auto Scaling Instances](images/ASG.png)
 
 ### 3. Application Load Balancer
 The internet-facing Load Balancer distributing traffic to healthy instances.
+
 ![Load Balancer](images/ALB.png)
 
 ### 4. Target Groups & Health Checks
 Healthy targets registered on Port 80.
+
 ![Target Group](images/TG.png)
 
 ### 5. Launch Template Configuration
 The blueprint for our instances, defining the AMI and Instance Type.
+
 ![Launch Template](images/TG.png)
 
 ### 6. Custom AMI (Amazon Machine Image)
 The pre-configured image used to speed up instance launching.
+
 ![AMI](images/AMI.png)
 
 ### 7. VPC & Networking Setup
 Isolated Virtual Private Cloud (VPC) for secure networking.
+
 ![VPC](images/VPC.png)
 ![Network ACLs](images/ACL.png)
 
@@ -61,9 +68,13 @@ Isolated Virtual Private Cloud (VPC) for secure networking.
 
 ### 🛠️ Tech Stack
 Cloud Provider: AWS (EC2, VPC, ALB, Auto Scaling, AMI)
+
 Containerization: Docker & DockerHub
+
 Orchestration: GitHub Actions (CI/CD)
+
 Language: Python (Flask)
+
 IaC/Config: Launch Templates, User Data
 
 ---
@@ -73,15 +84,21 @@ IaC/Config: Launch Templates, User Data
 The GitHub Actions workflow performs the following steps:
 
 Checkout Code: Pulls the latest code.
+
 Build Docker Image: Uses the Dockerfile.
+
 Login to DockerHub: Authenticates using Repository Secrets.
+
 Push to Registry: Uploads the image to DockerHub.
+
 Deploy: Updates the AWS infrastructure.
 
 Repository Secrets Required
 
 To replicate this pipeline, add the following secrets in Settings > Secrets and variables > Actions:
+
 DOCKER_USERNAME: Your DockerHub username.
+
 DOCKER_PASSWORD: Your DockerHub access token/password.
 
 ---
@@ -90,14 +107,19 @@ DOCKER_PASSWORD: Your DockerHub access token/password.
 
 Clone the Repo:
 
-bash
+```bash
 git clone [https://github.com/BKY1601/Devops-autoscale.git](https://github.com/BKY1601/Devops-autoscale.git)
-Run Locally (Docker):
 
-bash
+```
+Run Locally (Docker):
+```bash
 docker build -t my-flask-app .
 docker run -p 80:5000 my-flask-app
-Access: Open http://localhost:80 (or the ALB DNS name for AWS).
+```
+---
+Access: 
+
+Open http://localhost:80 (or the ALB DNS name for AWS).
 
 ---
 
